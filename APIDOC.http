@@ -1,0 +1,58 @@
+
+# api call for user registration
+###
+POST  http://127.0.0.1:8000/api/signup/
+Content-Type: application/json
+
+{
+    "username":"django",
+    "email":"django@gmail.com",
+    "password":"Password@123"
+}
+
+# api call for fetching token
+###
+POST http://127.0.0.1:8000/api/token/
+Content-Type: application/json
+
+{
+    "username":"django",
+    "password":"Password@123"
+}
+
+#api call for listing todos
+###
+GET  http://127.0.0.1:8000/api/todos/
+Accept: application/json
+Authorization: Token 0cf24864c2f056d9a2c57ebb3b96d5c737dbfc82
+
+#api call for creating todos
+###
+POST  http://127.0.0.1:8000/api/todos/
+Content-Type: application/json
+Authorization: Token 0cf24864c2f056d9a2c57ebb3b96d5c737dbfc82
+
+{
+    "title":"lic"
+}
+
+# api call for updating todos
+###
+PUT  http://127.0.0.1:8000/api/todos/1/
+Content-Type: application/json
+Authorization:Token 0cf24864c2f056d9a2c57ebb3b96d5c737dbfc82
+
+{
+    "title":"lic",
+    "status":true
+}
+
+#jwt token obtain pair
+###
+POST http://127.0.0.1:8000/api/jwt/token/
+Content-Type: application/json
+
+{
+    "username":"django",
+    "password":"Password@123"
+}
